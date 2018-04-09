@@ -10,7 +10,7 @@ ADD ./files/etc/nginx/symfony/666-dev.conf /etc/nginx/symfony/666-dev.conf
 # Partially borrowed from https://github.com/composer/docker.
 # Install composer.
 RUN DEBIAN_FRONTEND=noninteractive apt-get -qq update && \
-    DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends -q install curl && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends -q install curl git openssh-client && \
     rm -rf /var/lib/apt/lists/*
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
